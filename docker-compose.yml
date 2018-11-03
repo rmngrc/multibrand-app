@@ -1,0 +1,36 @@
+version: '3.7'
+services:
+
+  # Unfortunately docker-compose v3 dropped extends
+  # See: https://github.com/moby/moby/issues/31101
+  brand1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: rmngrc/app
+    container_name: brand1
+    command: "npm run serve"
+    environment:
+      NODE_ENV: "development"
+      BRAND: "brand1"
+    ports:
+      - "8080:8080"
+    volumes:
+      - ".:/usr/src/app"
+      - "/usr/src/app/node_modules"
+
+  brand2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: rmngrc/app
+    container_name: brand2
+    command: "npm run serve"
+    environment:
+      NODE_ENV: "development"
+      BRAND: "brand2"
+    ports:
+      - "8090:8080"
+    volumes:
+      - ".:/usr/src/app"
+      - "/usr/src/app/node_modules"
