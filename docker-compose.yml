@@ -12,7 +12,7 @@ services:
     command: "npm run serve"
     environment:
       NODE_ENV: "development"
-      BRAND: "brand1"
+      VUE_APP_BRAND: "brand1"
     ports:
       - "8080:8080"
     volumes:
@@ -28,7 +28,7 @@ services:
     command: "npm run serve"
     environment:
       NODE_ENV: "development"
-      BRAND: "brand2"
+      VUE_APP_BRAND: "brand2"
     ports:
       - "8090:8080"
     volumes:

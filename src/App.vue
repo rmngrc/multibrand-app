@@ -1,17 +1,22 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>Multibrand app / {{brand}}</h1>
+    <branded-button type="primary">Hi there! This is a branded button</branded-button>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import BrandedButton from './components/BrandedButton.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    BrandedButton
+  },
+  computed: {
+    brand() {
+      return process.env.VUE_APP_BRAND
+    }
   }
 }
 </script>
