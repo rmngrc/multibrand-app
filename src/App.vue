@@ -14,7 +14,7 @@ export default {
     BrandedButton
   },
   computed: {
-    brand() {
+    brand () {
       return process.env.VUE_APP_BRAND
     }
   }
