@@ -1,20 +1,24 @@
 <template>
   <div id="app">
+    <dynamic-component name="Header" />
     <h1>Multibrand app / {{brand}}</h1>
+    <dynamic-component name="Box" />
     <branded-button type="primary">Hi there! This is a branded button</branded-button>
   </div>
 </template>
 
 <script>
-import BrandedButton from './components/BrandedButton.vue'
+import BrandedButton from '@/components/BrandedButton'
+import DynamicComponent from '@/components/DynamicComponent'
 
 export default {
   name: 'app',
   components: {
-    BrandedButton
+    BrandedButton,
+    DynamicComponent
   },
   computed: {
-    brand() {
+    brand () {
       return process.env.VUE_APP_BRAND
     }
   }
@@ -28,6 +32,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+body {
+  margin: 0;
 }
 </style>
