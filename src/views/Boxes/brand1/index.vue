@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<script src="@/components/DBox"></script>
+<script src="@/views/Boxes"></script>
 
 <style scoped>
  .box {

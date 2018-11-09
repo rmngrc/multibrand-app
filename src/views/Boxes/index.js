@@ -1,5 +1,5 @@
 export default {
-  name: 'd-box',
+  name: 'boxes',
   computed: {
     brand () {
       return process.env.VUE_APP_BRAND
