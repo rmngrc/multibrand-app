@@ -1,6 +1,6 @@
 <template>
   <button type="button" class="Button" :class="`Button--${type}`">
-    <slot></slot>
+    <slot>Default button text</slot>
   </button>
 </template>
 
