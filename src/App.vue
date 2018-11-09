@@ -2,21 +2,15 @@
   <div id="app">
     <dynamic-component name="Header" />
     <h1>Multibrand app / {{brand}}</h1>
-    <dynamic-component name="Box" />
-    <branded-button type="primary">Hi there! This is a branded button</branded-button>
+    <router-link to="/buttons">Show me the buttons</router-link>
+    <router-link to="/boxes">Show me the boxes</router-link>
+    <router-view/>
   </div>
 </template>
 
 <script>
-import BrandedButton from '@/components/BrandedButton'
-import DynamicComponent from '@/components/DynamicComponent'
-
 export default {
   name: 'app',
-  components: {
-    BrandedButton,
-    DynamicComponent
-  },
   computed: {
     brand () {
       return process.env.VUE_APP_BRAND
